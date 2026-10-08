@@ -1,0 +1,5 @@
+/*
+ * All dashboard theme rules now live in ./style.css (the single source of
+ * truth for the design tokens and shared class vocabulary). This file is
+ * kept only because main.jsx imports it directly — nothing to add here.
+ */

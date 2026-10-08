@@ -1,0 +1,930 @@
+{
+	"info": {
+		"_postman_id": "295c8cdb-80a4-4170-9f5d-16142f2031bf",
+		"name": "Cartify Backend API",
+		"description": "Collection of all APIs for the Cartify platform, including Authentication, Marketplace, and Scraper services.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "54500853",
+		"_collection_link": "https://dbits-umeranwar-7719852.postman.co/workspace/umar-anwar's-Workspace~bbb7b843-dd7f-44d1-86ee-c98d6a0242df/collection/54500853-295c8cdb-80a4-4170-9f5d-16142f2031bf?action=share&source=collection_link&creator=54500853"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"umar12\",\n    \"email\": \"umarkhan@example.com\",\n    \"first_name\": \"umar\",\n    \"last_name\": \"anwar\",\n    \"password\": \"1122334455\",\n    \"role\": \"Vendor\",\n    \"brand_name\": \"Laptop Shop\",\n            \"phone_number\": \"21342314\",\n            \"address\": \"RYK\",\n            \"logo\": \"journal-ledger.pdf\",\n             \"country\": \"Country is required\",\n        \"state\": \"Punjab\",\n        \"city\": \"City RYK\",\n        \"latitude\": \"32.12\",\n        \"longitude\": \"74.23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/register/"
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "umaranwar",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "umar@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "umar",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "anwar",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "umar1122",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "VENDOR",
+											"type": "text"
+										},
+										{
+											"key": "brand_name",
+											"value": "liberty",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "2131234132",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "RYK",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/home/umer/Music/images.jpeg"
+										},
+										{
+											"key": "country",
+											"value": "Pakistan",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "Punjab",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "RYK",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "34.09",
+											"type": "text"
+										},
+										{
+											"key": "longitude",
+											"value": "74.21",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/auth/register/"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2026 10:01:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "LiteSpeed"
+								},
+								{
+									"key": "Vary",
+									"value": "User-Agent"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username_or_email\": \"admin\",\n    \"password\": \"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"umar123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/guest-login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Convert Guest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"umar123\",\n    \"username\": \"test1\",\n    \"email\": \"testexample.com\",\n    \"first_name\": \"New\",\n    \"last_name\": \"User\",\n    \"password\": \"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/convert-guest/"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/auth/profile/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Updated\",\n    \"last_name\": \"Name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/update-profile/"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh_token\": \"your_refresh_token_here\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/refresh-token/"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/reset-password/"
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\",\n    \"otp\": \"123456\",\n    \"new_password\": \"newpassword123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/confirm-reset/"
+					},
+					"response": []
+				},
+				{
+					"name": "Check User Availability",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/auth/check-user/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Marketplace",
+			"item": [
+				{
+					"name": "Product Feed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/marketplace/feed/?category=1&vendor=1&type=discount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"marketplace",
+								"feed",
+								""
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "1"
+								},
+								{
+									"key": "vendor",
+									"value": "1"
+								},
+								{
+									"key": "type",
+									"value": "discount"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Product\",\n    \"description\": \"Product description\",\n    \"price\": 100.00,\n    \"discount_price\": 80.00,\n    \"category\": 1,\n    \"subcategory\":\"sub2\",\n    \"product_type\": \"clothing\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/upload/"
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Favorite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 4,\n    \"device_id\": \"device_123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/favorite/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/marketplace/categories/?vendor_id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"marketplace",
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "vendor_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manage Category Visibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_id\": 1,\n    \"is_disabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/categories/visibility/"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Custom Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Summer Collection\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/categories/create/"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin: List Vendors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/marketplace/admin/vendors/"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin: Approve Vendor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor_id\": 36,\n    \"is_approved\": \"APPROVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/admin/approve-vendor/"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin: Create Vendor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vendor1\",\n    \"email\": \"vendor@example.com\",\n    \"first_name\": \"Vendor\",\n    \"last_name\": \"One\",\n    \"password\": \"password123\",\n    \"brand_name\": \"Vendor Brand\",\n    \"phone_number\": \"1234567890\",\n    \"address\": \"123 Vendor St\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/admin/create-vendor/"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin: Post on Behalf",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor_id\": 1,\n    \"title\": \"Admin Posted Product\",\n    \"price\": 50.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/admin/post-on-behalf/"
+					},
+					"response": []
+				},
+				{
+					"name": "all products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "72436ad1-f663-4ef1-9bc3-12344ae6ce19"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/marketplace/admin/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"burger2\",\n    \"title\": \"Sample Product\",\n    \"description\": \"Product description\",\n    \"price\": 100.00,\n    \"discount_price\": 80.00,\n    \"category\": 1,\n    \"subcategory\":3,\n    \"product_type\": \"clothing\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/upload/"
+					},
+					"response": []
+				},
+				{
+					"name": "single product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "2ba26cc7-4ae4-4e48-a9c2-58e19f4416d3"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/marketplace/products/7/"
+					},
+					"response": []
+				},
+				{
+					"name": "product edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "subcategory_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "original_price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "product_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/marketplace/vendor/products/6/edit/"
+					},
+					"response": []
+				},
+				{
+					"name": "category edit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/marketplace/admin/categories/1/edit/"
+					},
+					"response": []
+				},
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "list guest",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "analytics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "25ff8209-01a5-415a-9281-474d1131d8ae"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"umar123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/marketplace/admin/analytics/views/?product_id=24",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"marketplace",
+								"admin",
+								"analytics",
+								"views",
+								""
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "24"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scrape",
+			"item": [
+				{
+					"name": "Scrape Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://example.com/product/123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/scrape/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/categories/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Electronics\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/products-by-category/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/product/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Click Counts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/click-count/"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin: All Scraped Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/api/admin/all-scraped-items/"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "your_bearer_token_here",
+			"type": "string"
+		}
+	]
+}
